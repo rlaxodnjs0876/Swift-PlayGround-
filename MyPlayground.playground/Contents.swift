@@ -75,6 +75,7 @@ for _ in 0..<25{
 print("randomInts : \(randomInts)")
 */
 
+/*
 //옵셔녈 변수
 //값이 있는지 없는지 모른다
 
@@ -97,5 +98,106 @@ someVariable=nil
 //someVariable 이 비어있으면 즉 값이 없으면 기본값으로 요놈을 넣겠다.
 
 let myValue=someVariable ?? 10
-
 print("myValue : \(myValue)")
+
+let firstValue:Int?=30
+let secondValue:Int?=50
+
+unwrap(firstValue)
+unwrap(secondValue)
+
+func unwrap(_ parameter:Int?){
+    print("unwrap() called")
+    //값이 없으면 리턴
+    guard let unWrappedParam = parameter else{
+        return
+    }
+    print("unWappedParam : \(unWrappedParam)")
+}
+*/
+
+/*
+// 유튜버 (데이터) 모델 - struct / 구조체
+struct YoutuberStruct{
+    var name : String
+    var subscribersCount : Int
+}
+
+var Kim = YoutuberStruct(name:"킴",
+    subscribersCount: 1000)
+
+var KimClone=Kim
+
+print("값 넣기 전KimClone.name : \(KimClone.name)")
+
+KimClone.name="킴탱"
+
+print("값 넣은 후 KimClone.name : \(KimClone.name)")
+print("값 넣은 후 Kim.name : \(Kim.name)")
+
+print("====클래스====")
+//클래스
+class YoutuberClass{
+    var name : String
+    var subscribersCount : Int
+    // 생성자 - 즉 메모리에 올린다
+    // init 으로 매개변수를 가진 생성자 메소드를 만들어야
+    // 매개변수를 넣어서 그값을 가진 객체를 만들 수 있다.
+        init(name:String,subscribersCount:Int){
+            self.name=name
+            self.subscribersCount=subscribersCount
+        }
+}
+
+var Gim = YoutuberClass(name:"김",subscribersCount: 1000)
+var GimClone=Gim
+
+print("값 넣기 전 GimClone.name : \(GimClone.name)")
+
+GimClone.name="호롤루"
+
+print("값 넣은 후 GimClone.name : \(GimClone.name)")
+print("값 넣은 후 Gim.name : \(Gim.name)")
+*/
+
+/*
+//프로퍼티 옵저버
+var myAge=0{
+    willSet{
+    print("값이 설정될 예정이다. myAge : \(myAge)")
+    }
+    didSet{
+        print("값이 설정되었다 . myAge: \(myAge)")
+    }
+}
+
+myAge=10
+myAge=20
+myAge=30
+*/
+
+/*
+//함수, 메소드 정의
+func myFunction(name:String)->String{
+    return "안녕하세요? \(name) 입니다"
+}
+
+//함수 , 메소드를 호출한다 call
+myFunction(name: "킴")
+
+//함수, 메소드 정의
+func myFunctionSecond(with name:String)->String{
+    return "안녕하세요? \(name) 입니다"
+}
+
+myFunctionSecond(with: "호롤루루")
+
+//함수, 메소드 정의
+func myFunctionThird(_ name:String)->String{
+    return "안녕하세요? \(name) 입니다"
+}
+
+myFunctionThird("하하핳")
+ */
+
+
